@@ -1648,8 +1648,8 @@ public class PrimaveraXERFileWriter extends AbstractProjectWriter
       ACTIVITY_COLUMNS.put("cstr_date2", Task::getSecondaryConstraintDate);
       ACTIVITY_COLUMNS.put("cstr_type2", Task::getSecondaryConstraintType);
       ACTIVITY_COLUMNS.put("driving_path_flag", Task::getLongestPath);
-      ACTIVITY_COLUMNS.put("act_this_per_work_qty", t -> Integer.valueOf(0));
-      ACTIVITY_COLUMNS.put("act_this_per_equip_qty", t -> Integer.valueOf(0));
+      ACTIVITY_COLUMNS.put("act_this_per_work_qty", t -> "");
+      ACTIVITY_COLUMNS.put("act_this_per_equip_qty", t -> "");
       ACTIVITY_COLUMNS.put("external_early_start_date", Task::getExternalEarlyStart);
       ACTIVITY_COLUMNS.put("external_late_end_date", Task::getExternalLateFinish);
       ACTIVITY_COLUMNS.put("create_date", Task::getCreateDate);
@@ -1657,6 +1657,7 @@ public class PrimaveraXERFileWriter extends AbstractProjectWriter
       ACTIVITY_COLUMNS.put("create_user", t -> null);
       ACTIVITY_COLUMNS.put("update_user", t -> null);
       ACTIVITY_COLUMNS.put("location_id", Task::getLocationUniqueID);
+      ACTIVITY_COLUMNS.put("crt_path_num", t -> "");
    }
 
    private static final Map<String, ExportFunction<Relation>> PREDECESSOR_COLUMNS = new LinkedHashMap<>();
